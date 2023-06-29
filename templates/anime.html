@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Top g(2) anime</h1>
+    <ul>
+    {% for anime in animes %}
+       <h2>-{{ anime.title }}</h2>
+       <li> <p> Id: {{ anime.id }}</p></li>
+       <li> <p> Release date: {{ anime.rdate }}</p></li>
+    {% endfor %}
+    </ul>
+<a href="http://127.0.0.1:5000/">Back to home</a>
+{% endblock %}
+
