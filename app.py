@@ -3,15 +3,15 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-def get_anime():
+def get_pets():
     return [
-        {'id': 1,
-         'title': 'Boruto ',
-         'rdate': '1945'
+        {'years': 1,
+         'name': 'Sara ',
+         'animal_type': 'cat'
          },
-        {'id': 2,
-         'title': 'Andrew Tate shippuden',
-         'rdate': '2023'
+        {'years': 3,
+         'name': 'Jek',
+         'animal_type': 'dog'
          }
     ]
 
@@ -28,10 +28,10 @@ def about():
 def hey_name(name: str):
     return render_template('hello.html', title=name.capitalize(), nameForHTML=name.capitalize())
 
-@app.route('/anime')
+@app.route('/pets')
 def anime():
-    animes = get_anime()
-    return render_template('anime.html', animes=animes, title='Best Anime')
+    pets = get_pets()
+    return render_template('pets.html', pets=pets, title='My pets')
 
 if __name__ == '__main__':
     app.run()

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>My pets</h1>
+    <ul>
+    {% for pet in pets %}
+       <h2>-{{ pet.name }}</h2>
+       <li> <p> Years: {{ pet.years }}</p></li>
+       <li> <p> Animal type: {{ pet.animal_type }}</p></li>
+    {% endfor %}
+    </ul>
+<a href="http://127.0.0.1:5000/">Back to home</a>
+{% endblock %}
+
